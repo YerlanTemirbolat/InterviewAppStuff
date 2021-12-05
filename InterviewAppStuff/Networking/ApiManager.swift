@@ -7,28 +7,30 @@
 
 import Foundation
 
-// Todo 4
+// TODO 4
 
-struct Service {
+struct ApiManager {
     
-    static let shared = Service()
+    static let shared = ApiManager()
     
-    func fetchData(completion: @escaping([Course]) -> Void) {
+    func fetchData(completion: @escaping(Result<[Course], Error>) -> Void) {
         
         guard let url = URL(string: "https://api.letsbuildthatapp.com/jsondecodable/courses") else { return }
 
         URLSession.shared.dataTask(with: url) { data, response, error in
+            
+            if let error = error {
+                completion(.failure(error))
+            }
             guard let data = data else { return }
-            print("Data: \(data)")
             
             do {
-                let courseData = try JSONDecoder().decode([Course].self, from: data)
-                DispatchQueue.main.async {
-                    completion(courseData)
-                }
+                let courses = try JSONDecoder().decode([Course].self, from: data)
+                completion(.success(courses))
+                
             } catch {
                 let error = error
-                print("\(error.localizedDescription)")
+                completion(.failure(error))
             }
         }.resume()
     }

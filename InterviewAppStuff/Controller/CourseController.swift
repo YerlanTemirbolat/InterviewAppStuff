@@ -7,18 +7,15 @@
 
 import UIKit
 
-// Todo 2
+// TODO 2
 
 class CourseController: UITableViewController {
     
     fileprivate let cellId = "cell"
     private let isEnabled: Bool = true
-    
-    var courses = [Course]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    var api: ApiManager = .shared           // property injection
+
+    var courses = [CourseViewModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +32,16 @@ class CourseController: UITableViewController {
     }
     
     func fetchData() {
-        Service.shared.fetchData { data in
-            self.courses = data
+        api.fetchData { result in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+            case .success(let courses):
+                DispatchQueue.main.async {
+                    self.courses = courses.map(CourseViewModel.init)
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
 }
@@ -49,11 +54,13 @@ extension CourseController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        let course = courses[indexPath.row]
-        let courseName = course.name
-        //cell.textLabel?.text = courseName
-        if isEnabled {
-            cell.textLabel?.text = courseName.uppercased()
+        
+        let viewModel = courses[indexPath.row]
+        cell.textLabel?.text = viewModel.name
+        if viewModel.isHighlighted {
+            cell.backgroundColor = .green
+        } else {
+            cell.backgroundColor = .white
         }
         return cell
     }

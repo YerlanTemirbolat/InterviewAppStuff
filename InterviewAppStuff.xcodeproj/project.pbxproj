@@ -18,7 +18,8 @@
 		431948C2275913BA0023AB63 /* InterviewAppStuffUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431948C1275913BA0023AB63 /* InterviewAppStuffUITestsLaunchTests.swift */; };
 		431948CF275914CB0023AB63 /* CourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431948CE275914CB0023AB63 /* CourseController.swift */; };
 		431948D3275919FE0023AB63 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431948D2275919FE0023AB63 /* Course.swift */; };
-		431948D627591C200023AB63 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431948D527591C200023AB63 /* Service.swift */; };
+		431948D627591C200023AB63 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431948D527591C200023AB63 /* ApiManager.swift */; };
+		43194924275CFB860023AB63 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43194923275CFB860023AB63 /* CourseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,8 @@
 		431948C1275913BA0023AB63 /* InterviewAppStuffUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAppStuffUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		431948CE275914CB0023AB63 /* CourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseController.swift; sourceTree = "<group>"; };
 		431948D2275919FE0023AB63 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
-		431948D527591C200023AB63 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		431948D527591C200023AB63 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		43194923275CFB860023AB63 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		4319489D275913B90023AB63 /* InterviewAppStuff */ = {
 			isa = PBXGroup;
 			children = (
+				43194922275CFB490023AB63 /* ViewModel */,
 				431948D427591C020023AB63 /* Networking */,
 				431948D1275919E50023AB63 /* Model */,
 				431948D0275919CC0023AB63 /* Controller */,
@@ -155,9 +158,17 @@
 		431948D427591C020023AB63 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				431948D527591C200023AB63 /* Service.swift */,
+				431948D527591C200023AB63 /* ApiManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		43194922275CFB490023AB63 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				43194923275CFB860023AB63 /* CourseViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,9 +304,10 @@
 			files = (
 				431948A3275913B90023AB63 /* ViewController.swift in Sources */,
 				4319489F275913B90023AB63 /* AppDelegate.swift in Sources */,
+				43194924275CFB860023AB63 /* CourseViewModel.swift in Sources */,
 				431948D3275919FE0023AB63 /* Course.swift in Sources */,
 				431948CF275914CB0023AB63 /* CourseController.swift in Sources */,
-				431948D627591C200023AB63 /* Service.swift in Sources */,
+				431948D627591C200023AB63 /* ApiManager.swift in Sources */,
 				431948A1275913B90023AB63 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

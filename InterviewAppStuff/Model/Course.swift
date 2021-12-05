@@ -7,7 +7,7 @@
 
 import UIKit
 
-// Todo 3
+// TODO 3
 
 struct Course: Codable {
     let id: Int
