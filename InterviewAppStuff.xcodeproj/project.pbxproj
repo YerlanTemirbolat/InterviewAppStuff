@@ -20,6 +20,7 @@
 		431948D3275919FE0023AB63 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431948D2275919FE0023AB63 /* Course.swift */; };
 		431948D627591C200023AB63 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431948D527591C200023AB63 /* ApiManager.swift */; };
 		43194924275CFB860023AB63 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43194923275CFB860023AB63 /* CourseViewModel.swift */; };
+		43194927275E725F0023AB63 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43194926275E725F0023AB63 /* CourseCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		431948D2275919FE0023AB63 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		431948D527591C200023AB63 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		43194923275CFB860023AB63 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
+		43194926275E725F0023AB63 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		4319489D275913B90023AB63 /* InterviewAppStuff */ = {
 			isa = PBXGroup;
 			children = (
+				43194925275E724B0023AB63 /* View */,
 				43194922275CFB490023AB63 /* ViewModel */,
 				431948D427591C020023AB63 /* Networking */,
 				431948D1275919E50023AB63 /* Model */,
@@ -169,6 +172,14 @@
 				43194923275CFB860023AB63 /* CourseViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		43194925275E724B0023AB63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43194926275E725F0023AB63 /* CourseCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +317,7 @@
 				4319489F275913B90023AB63 /* AppDelegate.swift in Sources */,
 				43194924275CFB860023AB63 /* CourseViewModel.swift in Sources */,
 				431948D3275919FE0023AB63 /* Course.swift in Sources */,
+				43194927275E725F0023AB63 /* CourseCell.swift in Sources */,
 				431948CF275914CB0023AB63 /* CourseController.swift in Sources */,
 				431948D627591C200023AB63 /* ApiManager.swift in Sources */,
 				431948A1275913B90023AB63 /* SceneDelegate.swift in Sources */,

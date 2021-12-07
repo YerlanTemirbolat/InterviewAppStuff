@@ -13,7 +13,7 @@ struct ApiManager {
     
     static let shared = ApiManager()
     
-    func fetchData(completion: @escaping(Result<[Course], Error>) -> Void) {
+    func fetchCourses(completion: @escaping(Result<[Course], Error>) -> Void) {
         
         guard let url = URL(string: "https://api.letsbuildthatapp.com/jsondecodable/courses") else { return }
 
@@ -22,6 +22,7 @@ struct ApiManager {
             if let error = error {
                 completion(.failure(error))
             }
+            
             guard let data = data else { return }
             
             do {
